@@ -3,8 +3,8 @@ from moviepy.editor import VideoFileClip, AudioFileClip, CompositeAudioClip
 from pydub import AudioSegment
 
 # Directories
-video_dir = r"\coding\out"
-mp3_dir = r"\coding\out"
+video_dir = r"/coding/out"
+mp3_dir = r"/coding/out"
 
 
 # Function to find the first MP4 file in the video directory
