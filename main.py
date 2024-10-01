@@ -4,7 +4,6 @@ import os
 import logging
 from moviepy.editor import VideoFileClip, AudioFileClip, CompositeAudioClip
 import pytz
-
 # Define log directory
 log_dir = '/coding/logs'
 
@@ -12,12 +11,15 @@ log_dir = '/coding/logs'
 if not os.path.exists(log_dir):
     os.makedirs(log_dir)
 
-# Setup logging
+# Setup logging to both file and console
 log_file = os.path.join(log_dir, 'process_video.log')
 logging.basicConfig(
-    filename=log_file,
     level=logging.INFO,
-    format='%(asctime)s - %(levelname)s - %(message)s'
+    format='%(asctime)s - %(levelname)s - %(message)s',
+    handlers=[
+        logging.FileHandler(log_file),  # Log to file
+        logging.StreamHandler()  # Log to console
+    ]
 )
 
 # Directories
